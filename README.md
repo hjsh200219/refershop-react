@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# Refershop React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+쿠팡 API를 활용한 제품 검색 및 분석 React 애플리케이션입니다.
 
-## Available Scripts
+## 주요 기능
 
-In the project directory, you can run:
+- 키워드 기반 제품 검색
+- 유튜브 동영상 분석 결과 검색
+- 반응형 디자인
+- 쿠팡 제품 연동
 
-### `npm start`
+## 기술 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- TypeScript
+- Tailwind CSS
+- Express.js
+- PostgreSQL (Neon)
+- 쿠팡 파트너스 API
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 시작하기
 
-### `npm test`
+1. 저장소 클론
+```bash
+git clone https://github.com/[your-username]/refershop-react.git
+cd refershop-react
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 의존성 설치
+```bash
+npm install
+```
 
-### `npm run build`
+3. 환경 변수 설정
+`.env` 파일을 생성하고 다음 변수들을 설정하세요:
+```
+REACT_APP_POSTGRES_URL=your_neon_db_url
+REACT_APP_COUPANG_ACCESS_KEY=your_coupang_access_key
+REACT_APP_COUPANG_SECRET_KEY=your_coupang_secret_key
+REACT_APP_COUPANG_SUB_ID=your_coupang_sub_id
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. 개발 서버 실행
+```bash
+# Express 서버 실행 (3001 포트)
+node server.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 별도의 터미널에서 React 개발 서버 실행 (3000 포트)
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 프로젝트 구조
 
-### `npm run eject`
+```
+refershop-react/
+├── public/          # 정적 파일
+├── src/
+│   ├── components/  # 재사용 가능한 컴포넌트
+│   ├── pages/       # 페이지 컴포넌트
+│   ├── utils/       # 유틸리티 함수
+│   └── styles/      # CSS 스타일
+├── server.js        # Express 서버
+└── .env            # 환경 변수 (git에서 제외됨)
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 라이선스
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+MIT License
