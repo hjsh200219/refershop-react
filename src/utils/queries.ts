@@ -22,6 +22,7 @@ export interface VideoAnalysis {
   video_id: string;
   title: string;
   channel_title: string;
+  channel_id: string;
   product_name: string;
   category: string;
   pros: string[];
@@ -41,6 +42,7 @@ export async function searchVideoAnalysis(keyword: string): Promise<VideoAnalysi
   const results = await sql`
     SELECT
       SI.channel_title,
+      SI.channel_id,
       CI.video_id,
       CI.title,
       VA.id,
